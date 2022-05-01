@@ -22,3 +22,7 @@ print('world')      # 两个合起来输出 helloworld
 print('hello',end='_*_')
 print('\nhelloworld')
 
+# f-string输出规定位数
+print(f"我的身高{height:.2f}cm")
+print(f"我的身高{height:.3f} cm")
+
