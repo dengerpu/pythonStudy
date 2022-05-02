@@ -107,12 +107,47 @@
 #         print('%d是素数' % num)
 
 # 要求用户输入一个字符串，遍历当前字符串并打印，如果遇见“q”,则跳出循环。如果遇见“ ”（空格）则跳过当前输出。
-my_str = input('请输入字符串')
-for i in my_str:
-    if i == 'p':
-        break
-    elif i == ' ':
-        continue
+# my_str = input('请输入字符串')
+# for i in my_str:
+#     if i == 'p':
+#         break
+#     elif i == ' ':
+#         continue
+#     else:
+#         print(i)
+
+# 使用for循环计算1 - 100 之间的累加和
+# result = 0
+# for i in range (1,101):
+#     result += i
+# print(result)
+
+# 请用户输入一个数，使用for循环计算是否为素数(素数只能被 1 和本身整除)
+# value = int(input('请输入数字：'))
+# if value != 1 and value != 0:
+#     for i in range(2, value):
+#         if value % i == 0:
+#             print(f'{value}不是素数')
+#             break
+#     else:
+#         print(f'{value}素数')
+
+# 分别使用for循环和while循环，求100~200的所有素数
+for i in range(100, 201):
+    for j in range(2, i):
+        if i%j == 0:
+            break
     else:
-        print(i)
+        print(i,end=' ')
+print()
+num = 100
+while num <= 200:
+    i = 2
+    while i < num:
+        if num % i == 0:
+            break
+        i += 1
+    else:
+        print(num,end=' ')
+    num += 1
 
