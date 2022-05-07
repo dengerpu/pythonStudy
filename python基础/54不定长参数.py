@@ -33,3 +33,11 @@ def add(*args, **kwargs):
 add(1, 2, a=1, b=2)
 add(1, 2, 3, 4, a=1, b=2, c=5)
 
+my_list = [1, 2, 3, 4, 5, 6]
+my_dict = {'a': 7, 'c': 8, 'b': 9, 'd': 10}
+# add(my_list)  # 将列表作为一个数据进行传递
+add(*my_list)  # 将列表中的每一个数据作为一个位置参数进行传参，拆包
+
+# add(my_dict)  # 将my_dict作为一个位置实参进行传递
+# add(*my_dict)   # 将my_dict的key作为一个位置实参进行传递
+add(**my_dict)  # 将my_dict的键值对作为关键词实参进行传递
