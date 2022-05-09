@@ -1,0 +1,3 @@
+hello world!
+hello python!
+写入文字

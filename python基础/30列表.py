@@ -25,3 +25,10 @@ print(my_list2[:])  # [1, 3.14, True, 'itcast']
 # 下标操作和字符串中不同的是，字符串不能使用下标修改其中的数据，但是列表可以
 my_list2[0] = 'modify'
 print(my_list2)
+
+my_list = [20, 30]
+def fun(a):
+    a += 20, # (20,)相当于一个元组   列表，+=，extend即a.extend（20，）
+
+fun(my_list)
+print(my_list)
