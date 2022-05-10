@@ -1,3 +1,4 @@
+import os
 # 定义一个列表，存储学生信息
 stu_list = []
 
@@ -82,10 +83,12 @@ def save_info():
 
 
 def read_info():
-    f = open('student.txt', 'r', encoding='utf-8')
-    buf = f.read()
     global stu_list
-    stu_list = eval(buf)
+    if os.path.exists('student.txt'):   # 查看文件是否存在
+        f = open('student.txt', 'r', encoding='utf-8')
+        buf = f.read()
+        if buf:
+            stu_list = eval(buf)
     # print(len(stu_list))
     f.close()
 
@@ -113,7 +116,6 @@ def main():
         input('...... 回车键继续操作.......')
 
 
-# save_info()
 main()
-# read_info()
+
 
