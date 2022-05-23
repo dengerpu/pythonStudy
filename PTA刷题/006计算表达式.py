@@ -24,16 +24,19 @@
 # Invalid operator
 
 # 提交显示答案错误
-value = input()
-list = value.split()
-if list[1] == '*':
-    result = int(list[0]) * int(list[2])
-    print(f'{list[0]}{list[1]}{list[2]}={result}')
-elif list[1] == '/':
-    result = int(list[0]) / int(list[2])
-    print(f'{list[0]}{list[1]}{list[2]}={result}')
-elif list[1] == '%':
-    result = int(list[0]) % int(list[2])
-    print(f'{list[0]}{list[1]}{list[2]}={result}')
-else:
+try:
+    value = input()
+    list = value.split()
+    if list[1] == '*':
+        result = int(list[0]) * int(list[2])
+        print(f'{list[0]}{list[1]}{list[2]}={result}')
+    elif list[1] == '//':
+        result = int(list[0]) // int(list[2])
+        print(f'{list[0]}{list[1]}{list[2]}={result}')
+    elif list[1] == '%':
+        result = int(list[0]) % int(list[2])
+        print(f'{list[0]}{list[1]}{list[2]}={result}')
+    else:
+        print('Invalid operator')
+except:
     print('Invalid operator')
