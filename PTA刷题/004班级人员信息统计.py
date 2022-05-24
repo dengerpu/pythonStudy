@@ -56,13 +56,11 @@ for stu in class1:
 for stu in class2.split():
     if stu not in class_list2:
         class_list2.append(stu)
-for stu in acm.split():
-    acm_list.append(stu)
-for stu in english.split():
-    english_list.append(stu)
+acm_list = acm.split()
+english_list = english.split()
 total_student = len(class_list1)+len(class_list2)  # 两个班所有的人员数量
 for stu in class_list1:
-    if (stu not in acm_list) and ( stu not in english_list) :
+    if (stu not in acm_list) and (stu not in english_list):
         norace_list.append(stu)
     if (stu in acm_list) or (stu in english_list):
         race_list.append(stu)
@@ -76,7 +74,7 @@ for stu in class_list1:
         if not ((stu in acm_list) and (stu in english_list)):
             race_one_list.append(stu)
 for stu in class_list2:
-    if (stu not in acm_list) and ( stu not in english_list) :
+    if (stu not in acm_list) and (stu not in english_list):
         norace_list.append(stu)
     if (stu in acm_list) or (stu in english_list):
         race_list.append(stu)
