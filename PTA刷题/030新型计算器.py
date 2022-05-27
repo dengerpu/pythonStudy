@@ -43,6 +43,54 @@
 # (1, 2, 3) - (4, 5, 6) = (-3, -3, -3)
 # (1, 2, 3) * 3 = (3, 6, 9)
 # (1, 2, 3) / 3 = (0, 0, 1)
-# class VecCal():
-#     def __init__(self, x, y, z):
+class VecCal(object):
+    def __init__(self, x=0, y=0, z=0):
+        self.X = x
+        self.Y = y
+        self.Z = z
 
+    def __add__(self, n):
+        result = VecCal()
+        result.X = self.X + n.X
+        result.Y = self.Y + n.Y
+        result.Z = self.Z + n.Z
+        return result
+
+    def __sub__(self, n):
+        result = VecCal()
+        result.X = self.X - n.X
+        result.Y = self.Y - n.Y
+        result.Z = self.Z - n.Z
+        return result
+
+    def __mul__(self, n):
+        result = VecCal()
+        result.X = self.X * n
+        result.Y = self.Y * n
+        result.Z = self.Z * n
+        return result
+
+    def __truediv__(self, n):
+        result = VecCal()
+        result.X = self.X // n
+        result.Y = self.Y // n
+        result.Z = self.Z // n
+        return result
+
+    def show(self):
+        my_tuple = (self.X, self.Y, self.Z)
+        return my_tuple
+
+
+a, b, c = list(map(int, input().split(',')))
+x, y, z = list(map(int, input().split(',')))
+n = int(input())
+v1 = VecCal(a, b, c)
+v2 = VecCal(x, y, z)
+print(f'{v1.show()} + {v2.show()} = {(v1 + v2).show()}')
+print(f'{v1.show()} - {v2.show()} = {(v1 - v2).show()}')
+print(f'{v1.show()} * {n} = {(v1 * n).show()}')
+if n != 0:
+    print(f'{v1.show()} / {n} = {(v1 / n).show()}')  # 其实n为0，可以输出为（0,0,0）
+else:
+    print(f'{v1.show()} / {n} = {(0, 0, 0)}')
