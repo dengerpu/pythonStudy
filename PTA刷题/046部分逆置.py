@@ -16,8 +16,8 @@
 # 55 44 33 22 11
 def print_lst(lst):
     for i in range(len(lst)):
-        if i != len(lst) -1:
-            print(lst[i],end=' ')
+        if i != len(lst) - 1:
+            print(lst[i], end=' ')
         else:
             print(lst[i])
 #

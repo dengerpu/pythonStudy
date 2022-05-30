@@ -30,6 +30,7 @@ def bin_search(lst, num):
             low = mid + 1
     return 0
 
+
 def print_list(lst):
     for i in range(len(lst)):
         if i != len(lst) - 1:
@@ -38,13 +39,17 @@ def print_list(lst):
             print(lst[i])
 
 
-n = int(input())
-lst = list(map(int, input().split()))
-lst.sort()
-m = int(input())
-search_lst = list(map(int, input().split()))
-index_lst = []
-for item in search_lst:
-    index_lst.append(bin_search(lst, item))
-print_list(lst)
-print_list(index_lst)
+try:
+    while True:
+        n = int(input())
+        lst = list(map(int, input().split()))
+        lst.sort()
+        m = int(input())
+        search_lst = list(map(int, input().split()))
+        index_lst = []
+        for item in search_lst:
+            index_lst.append(bin_search(lst, item))
+        print_list(lst)
+        print_list(index_lst)
+except EOFError:
+    pass

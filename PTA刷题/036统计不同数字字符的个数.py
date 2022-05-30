@@ -23,14 +23,16 @@
 #     print()
 
 lst = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-while True:
-    st = input()
-    if st.strip() == '':
-        break
-    for i in lst:
-        if st.count(i) == 0:
-            continue
-        else:
-            print("%c %d" % (i,st.count(i)))
-    print()
-
+try:
+    while True:
+        st = input()
+        if st.strip() == '':
+            break
+        for i in lst:
+            if st.count(i) == 0:
+                continue
+            else:
+                print("%c %d" % (i,st.count(i)))
+        print()
+except EOFError:
+    pass

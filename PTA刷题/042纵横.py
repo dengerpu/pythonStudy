@@ -14,28 +14,31 @@
 # 1 1 1
 # 输出样例:
 # 1 2 5
-t = int(input())
-for i in range(t):
-    n = int(input())
-    lst = []
-    kill_list = []
-    for j in range(n):
-        row_list = list(map(int, input().split()))
-        lst.append(row_list)
-    for x in range(n):
-        for y in range(n):
-            result = 0
-            result += sum(lst[x])  # 先求行的和
-            for column_index in range(n):
-                result += lst[column_index][y]
-            result -= lst[x][y]   #多加了一个这个数，所有要减去
-            kill_list.append(result)
-    max_num = max(kill_list)
-    for i in range(len(kill_list)):
-        if max_num == kill_list[i]:
-            if i <= n:
-                print(1, i+1, max_num)
-            else:
-                print((i//n+1), (i+1) % n, max_num)
-            break
-
+try:
+    while True:
+        t = int(input())
+        for i in range(t):
+            n = int(input())
+            lst = []
+            kill_list = []
+            for j in range(n):
+                row_list = list(map(int, input().split()))
+                lst.append(row_list)
+            for x in range(n):
+                for y in range(n):
+                    result = 0
+                    result += sum(lst[x])  # 先求行的和
+                    for column_index in range(n):
+                        result += lst[column_index][y]
+                    result -= lst[x][y]   #多加了一个这个数，所有要减去
+                    kill_list.append(result)
+            max_num = max(kill_list)
+            for i in range(len(kill_list)):
+                if max_num == kill_list[i]:
+                    if i <= n:
+                        print(1, i+1, max_num)
+                    else:
+                        print((i//n+1), (i+1) % n, max_num)
+                    break
+except EOFError:
+    pass

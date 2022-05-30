@@ -24,14 +24,18 @@ def Factorial(n):
         i += 1
     return result
 
-while True:
-    value = input()
-    if value.strip() == '':
-        break
-    n, m = list(map(int, value.split()))
-    if m != n:
-        result = Factorial(n)/(Factorial(m)*Factorial(n-m))
-        print(int(result))
-    else:
-        print(1)  # 除数不能为0 ， cn0 = 1
+
+try:
+    while True:
+        value = input()
+        if value.strip() == '':
+            break
+        n, m = list(map(int, value.split()))
+        if m != n:
+            result = Factorial(n)/(Factorial(m)*Factorial(n-m))
+            print(int(result))
+        else:
+            print(1)  # 除数不能为0 ， cn0 = 1
+except EOFError:
+    pass
 

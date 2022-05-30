@@ -34,59 +34,109 @@
 # ACM Or English: ['10', '2', '3', '5', 'b', 'c', 'd', 'e', 'f']
 # ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 
-class_list1 = []  # 记录一班学生信息
-class_list2 = []  # 记录二班学生信息
-acm_list = []  # 参加acm竞赛的学生
-english_list = []  # 参加英语竞赛的学生
-norace_list = []  # 没有参加竞赛的学生
-race_list = []  # 所有参赛
-race_all_list =[]   # 两个都参加
-race_englist_list = []  # 只参加英语
-race_acm_list = []      # 只参加acm
-race_one_list = []      # 只参加一个
+# class_list1 = []  # 记录一班学生信息
+# class_list2 = []  # 记录二班学生信息
+# acm_list = []  # 参加acm竞赛的学生
+# english_list = []  # 参加英语竞赛的学生
+# norace_list = []  # 没有参加竞赛的学生
+# race_list = []  # 所有参赛
+# race_all_list =[]   # 两个都参加
+# race_englist_list = []  # 只参加英语
+# race_acm_list = []      # 只参加acm
+# race_one_list = []      # 只参加一个
+#
+# class1 = input()  # 输入一班的学生信息
+# class2 = input()  # 输入二班的学生信息
+# acm = input()  # 输入参加acm竞赛的同学
+# english = input()  # 输入参加英语竞赛的同学
+# student = input()  # 转学的学生
+# for stu in class1:
+#     if stu not in class_list1:
+#         class_list1.append(stu)
+# for stu in class2.split():
+#     if stu not in class_list2:
+#         class_list2.append(stu)
+# acm_list = acm.split()
+# english_list = english.split()
+# total_student = len(class_list1)+len(class_list2)  # 两个班所有的人员数量
+# for stu in class_list1:
+#     if (stu not in acm_list) and (stu not in english_list):
+#         norace_list.append(stu)
+#     if (stu in acm_list) or (stu in english_list):
+#         race_list.append(stu)
+#     if (stu in acm_list) and (stu in english_list):
+#         race_all_list.append(stu)
+#     if (stu in acm_list) and (stu not in english_list):
+#         race_acm_list.append(stu)
+#     if (stu not in acm_list) and (stu in english_list):
+#         race_englist_list.append(stu)
+#     if (stu in acm_list) or (stu in english_list):
+#         if not ((stu in acm_list) and (stu in english_list)):
+#             race_one_list.append(stu)
+# for stu in class_list2:
+#     if (stu not in acm_list) and (stu not in english_list):
+#         norace_list.append(stu)
+#     if (stu in acm_list) or (stu in english_list):
+#         race_list.append(stu)
+#     if (stu in acm_list) and (stu in english_list):
+#         race_all_list.append(stu)
+#     if (stu in acm_list) and (stu not in english_list):
+#         race_acm_list.append(stu)
+#     if (stu not in acm_list) and (stu in english_list):
+#         race_englist_list.append(stu)
+#     if (stu in acm_list) or (stu in english_list):
+#         if not((stu in acm_list) and (stu in english_list)):
+#             race_one_list.append(stu)
+# print(f'Total: {total_student}')
+# print(f'Not in race: {sorted(norace_list)}, num: {len(norace_list)}')
+# print(f'All racers: {sorted(race_list)}, num: {len(race_list)}')
+# print(f'ACM + English: {sorted(race_all_list)}, num: {len(race_all_list)}')
+# print(f'Only ACM: {sorted(race_acm_list)}')
+# print(f'Only English: {sorted(race_englist_list)}')
+# print(f'ACM Or English: {sorted(race_one_list)}')
+# if student in class_list1:
+#     class_list1.remove(student)
+#     print(class_list1)
+# elif student in class_list2:
+#     class_list2.remove(student)
+#     print(class_list2)
 
-class1 = input()  # 输入一班的学生信息
-class2 = input()  # 输入二班的学生信息
-acm = input()  # 输入参加acm竞赛的同学
-english = input()  # 输入参加英语竞赛的同学
-student = input()  # 转学的学生
-for stu in class1:
-    if stu not in class_list1:
-        class_list1.append(stu)
-for stu in class2.split():
-    if stu not in class_list2:
-        class_list2.append(stu)
-acm_list = acm.split()
-english_list = english.split()
-total_student = len(class_list1)+len(class_list2)  # 两个班所有的人员数量
-for stu in class_list1:
-    if (stu not in acm_list) and (stu not in english_list):
-        norace_list.append(stu)
-    if (stu in acm_list) or (stu in english_list):
-        race_list.append(stu)
-    if (stu in acm_list) and (stu in english_list):
-        race_all_list.append(stu)
-    if (stu in acm_list) and (stu not in english_list):
-        race_acm_list.append(stu)
-    if (stu not in acm_list) and (stu in english_list):
-        race_englist_list.append(stu)
-    if (stu in acm_list) or (stu in english_list):
-        if not ((stu in acm_list) and (stu in english_list)):
-            race_one_list.append(stu)
-for stu in class_list2:
-    if (stu not in acm_list) and (stu not in english_list):
-        norace_list.append(stu)
-    if (stu in acm_list) or (stu in english_list):
-        race_list.append(stu)
-    if (stu in acm_list) and (stu in english_list):
-        race_all_list.append(stu)
-    if (stu in acm_list) and (stu not in english_list):
-        race_acm_list.append(stu)
-    if (stu not in acm_list) and (stu in english_list):
-        race_englist_list.append(stu)
-    if (stu in acm_list) or (stu in english_list):
-        if not((stu in acm_list) and (stu in english_list)):
-            race_one_list.append(stu)
+# 集合的计算方法：
+#
+#            |  ：并集
+#
+#           & ：交集
+#
+#           -   ：差集
+#
+#          ^    ：对称差集
+
+
+
+# class_list1 = []  # 记录一班学生信息
+# class_list2 = []  # 记录二班学生信息
+# acm_list = []  # 参加acm竞赛的学生
+# english_list = []  # 参加英语竞赛的学生
+# norace_list = []  # 没有参加竞赛的学生
+# race_list = []  # 所有参赛
+# race_all_list =[]   # 两个都参加
+# race_englist_list = []  # 只参加英语
+# race_acm_list = []      # 只参加acm
+# race_one_list = []      # 只参加一个
+
+class_list1 = set(input())  # 记录一班学生信息
+class_list2 = set(input().split())   # 记录二班学生信息
+acm_list = set(input().split())  # 参加acm竞赛的学生
+english_list = set(input().split())  # 参加英语竞赛的学生
+student = input()
+class_lst = class_list1 | class_list2  # 两个班的总人数
+total_student = len(class_lst)
+norace_list = class_lst - acm_list - english_list  # 没有参加竞赛的学生
+race_list = acm_list | english_list  # 所有参赛
+race_all_list = acm_list & english_list  # 两个都参加
+race_acm_list = acm_list - english_list   # 只参加acm
+race_englist_list = english_list - acm_list   # 只参加英语
+race_one_list = race_list - race_all_list  # 只参加一个
 print(f'Total: {total_student}')
 print(f'Not in race: {sorted(norace_list)}, num: {len(norace_list)}')
 print(f'All racers: {sorted(race_list)}, num: {len(race_list)}')
@@ -96,7 +146,7 @@ print(f'Only English: {sorted(race_englist_list)}')
 print(f'ACM Or English: {sorted(race_one_list)}')
 if student in class_list1:
     class_list1.remove(student)
-    print(class_list1)
+    print(sorted(class_list1))
 elif student in class_list2:
     class_list2.remove(student)
-    print(class_list2)
+    print(sorted(class_list2))
