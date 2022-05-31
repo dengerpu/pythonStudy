@@ -13,11 +13,26 @@
 # 输出样例:
 # 4
 # 23
-# 68
-n = int(input())
-lst = [0 for i in range(0, n+1)]
-length = len(lst)
-i = 1
-while length > 1:
-   if i % 3 == 0:
-        lst[i] = 1
+# # 68
+try:
+    while True:
+        n = int(input())
+        lst = [0 for i in range(0, n+1)]
+        length = len(lst) - 1  # 减一是因为要去掉0这个索引
+        i = 1
+        k = 0
+        while length > 1:
+            if lst[i] != -1:
+                k += 1
+            if k == 3:
+                lst[i] = -1
+                k = 0
+                length -= 1
+            i += 1
+            if i == n+1:
+                i = 1
+        for x in range(1, n+1):
+            if lst[x] == 0:
+                print(x)
+except EOFError:
+    pass
