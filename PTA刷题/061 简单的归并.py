@@ -15,3 +15,32 @@
 # 7 2 6 8 9 11 15 20
 # 输出样例:
 # 2 3 5 6 8 8 9 11 11 15 20
+def print_list(lst):
+    for i in range(len(lst)):
+        if i != len(lst) - 1:
+            print(lst[i], end=' ')
+        else:
+            print(lst[i])
+
+
+t = int(input())
+for i in range(t):
+    m, *lstA = map(int, input().split())
+    n, *lstB = map(int, input().split())
+    x = 0
+    y = 0
+    lstC = []
+    while x < m and y < n:
+        if lstA[x] <= lstB[y]:
+            lstC.append(lstA[x])
+            x += 1
+        else:
+            lstC.append(lstB[y])
+            y += 1
+    while x < m:
+        lstC.append(lstA[x])
+        x += 1
+    while y < n:
+        lstC.append(lstB[y])
+        y += 1
+    print_list(lstC)
