@@ -51,3 +51,33 @@
 # 在这里给出相应的输出。例如：
 #
 # 男,2000年10月01日
+import datetime
+card = input()
+if len(card) == 15:
+    try:
+        birthday = card[6:12]
+        year = '19' + birthday[0:2]
+        month = birthday[2:4]
+        day = birthday[4:6]
+        datetime.date(int(year), int(month), int(day))
+        gender = int(card[-1])
+        if gender % 2 == 0:
+            print(f'女,{year}年{month}月{day}日')
+        else:
+            print(f'男,{year}年{month}月{day}日')
+    except Exception as e:
+        print('Error,日期不合法')
+elif len(card) == 18:
+    try:
+        birthday = card[6:14]
+        year = birthday[0:4]
+        month = birthday[4:6]
+        day = birthday[6:8]
+        datetime.date(int(year), int(month), int(day))
+        gender = int(card[-2])
+        if gender % 2 == 0:
+            print(f'女,{year}年{month}月{day}日')
+        else:
+            print(f'男,{year}年{month}月{day}日')
+    except Exception as e:
+        print('Error,日期不合法')
