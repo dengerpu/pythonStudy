@@ -13,6 +13,23 @@
 # 输出样例:
 # 5,1,2,3,4,5,5,4,3,2,1
 # 3,2,4,6,6,4,2
+# n = int(input())
+# for i in range(n):
+#     num = list(input())
+#     print(len(num), end=',')
+#     print(','.join(num), end=',')
+#     print(','.join(reversed(num)))
+
+# 方法二
 n = int(input())
 for i in range(n):
-    
+    num = int(input())
+    lst = []  # 存储整数的每一位，逆序
+    count = 0
+    while num:
+        lst.append(str(num%10))
+        num = int(num/10)
+        count += 1
+    print(count, end=',')
+    print(','.join(reversed(lst)), end=',')
+    print(','.join(lst))
