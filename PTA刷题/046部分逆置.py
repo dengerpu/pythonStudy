@@ -14,14 +14,14 @@
 # 输出样例:
 # 11 66 55 44 33 22 77
 # 55 44 33 22 11
-def print_lst(lst):
-    for i in range(len(lst)):
-        if i != len(lst) - 1:
+def print_lst(lst, n):
+    for i in range(n):
+        if i != n - 1:
             print(lst[i], end=' ')
         else:
             print(lst[i])
-#
-#
+
+
 # def reverse(lst, i, j):
 #     while i < j:
 #         lst[i-1], lst[j-1] = lst[j-1], lst[i-1]
@@ -37,10 +37,10 @@ def print_lst(lst):
 #     j = my_lst[2]
 #     lst = my_lst[3:]
 #     reverse(lst, i, j)
-#     print_lst(lst)
+#     print_lst(lst, n)
 t = int(input())
 for k in range(t):
     n, i, j, *nums = map(int, input().split())
     i -= 1
     nums[i:j] = reversed(nums[i:j])
-    print_lst(nums)
+    print_lst(nums, n)
