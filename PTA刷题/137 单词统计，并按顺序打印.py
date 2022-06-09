@@ -23,3 +23,11 @@
 # round:1
 # to:1
 # you:1
+word_list = input().split()
+my_dict = {}
+for word in word_list:
+    if word not in my_dict:
+        my_dict[word] = word_list.count(word)
+lst = sorted(my_dict.items(), key=lambda x: (-x[1], x[0]))
+for item in lst:
+    print(f'{item[0]}:{item[1]}')

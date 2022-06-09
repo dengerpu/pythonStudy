@@ -29,20 +29,26 @@
 t = int(input())
 for i in range(t):
     n = int(input())
+    tian = list(map(int, input().split()))  # 田忌马的速度
+    qi = list(map(int, input().split()))  # 齐王马的速度
+    tian.sort()
+    qi.sort()
+    x = 0
+    y = 0
     count = 0
-    lst1 = list(map(int, input().split()))  # 田忌马的速度
-    lst2 = list(map(int, input().split()))  # 齐王马的速度
-    lst1.sort()
-    lst2.sort()
-    if n > 2:  # 如果只有两匹马的话，小对小
-        lst2.insert(0, lst2[n-1])
-        lst2.pop()
-    print(lst1)
-    print(lst2)
-    for j in range(n):
-        if lst1[j] > lst2[j]:
-            count += 1
-        if lst1[j] < lst2[j]:
-            count -= 1
-    print(count*200)
+    for x in range(n):
+        for y in range(n):  # 找到田忌比齐王最弱的马强的下标，齐马增加，田的马从y开始
+            if tian[y] > qi[x]:
+                y += 1
+                count += 1
+                break
+            else:
+                y += 1
+        if y == n:
+            break  # 田忌所有的马都不能赢
+    print(count*200 - (n-count)*200)
+
+
+
+
 
