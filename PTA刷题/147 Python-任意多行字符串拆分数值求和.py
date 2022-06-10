@@ -16,3 +16,16 @@
 # 2 3; 4:9
 # 10,20 30; 40:100
 #  9:9
+# import re  # 这个模块的函数可以以多个分隔符分开，但在这里不适用，因为有多个空格
+# num_list = input()
+# num_list = re.split(',|;|  ', num_list)
+# print(num_list)
+try:
+    while True:
+        value = input()
+        my_string = value.replace(',', ' ').replace(';',' ')
+        num_list = list(map(int, my_string.split()))
+        result = value + ":" + str(sum(num_list))
+        print(result)
+except EOFError:
+    pass
