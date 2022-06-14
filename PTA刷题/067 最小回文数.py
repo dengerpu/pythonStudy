@@ -27,7 +27,7 @@ for i in range(t):
     n = input()
     end = int(n+n)  # 肯定不会超过这个范围，相当于字符串拼接。这个也肯定是回文字符串
     n = int(n)
-    for i in range(n, end+1):
+    for i in range(n+1, end+1):
         if symmetric(i):
             print(i)
             break
