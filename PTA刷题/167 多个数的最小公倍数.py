@@ -35,6 +35,68 @@
 # 105
 # 60
 # # 1260
+#
+# fd = eval(input('请输入要研究的多个整数，以逗号隔开：\n'))
+# fdx = list()  # 各整数的所有因子，以列表存于此列表中。
+# for fi in fd:
+#     print(fi, "= ", end="")
+#     fid = list()  # 每个整数因式分解后各因子存放于此
+#     if fi == 1 or fi == 2:
+#         fid.append(fi)  # 1或2，特殊处理
+#     x = 2
+#     while x <= int(fi ** 0.5):
+#         if fi % x != 0:
+#             x += 1
+#         if fi % x == 0:
+#             fid.append(str(x))
+#             fi = int(fi / x)
+#     fid.append(str(fi))
+#     fid.sort()
+#     fdx.append(fid)
+#     print("*".join(fid))  # 打印因式分解
+#
+# fdd = [i for d in fdx for i in d]  # 所有整数的因子汇总。
+# fdd = list(set(fdd))  # fdd中含有所有的因子，注意每个因子只出现一次。
+#
+# minks = list()  # 求最小公倍数。各因子以在各整数中出现的最大次数出现于此。
+# maxks = list()  # 求最大公约数。各共有因子以在各整数中同时出现的最小次数出现于此。
+#
+# for x in fdd:
+#     x_c = list()  # 各整数中含x因子的个数，汇总于此。注意，此中可能含有0.
+#     for d in fdx:
+#         x_c.append(d.count(x))
+#     for i in range(max(x_c)):
+#         minks.append(x)
+#     if min(x_c) != 0:
+#         for j in range(min(x_c)):
+#             maxks.append(x)
+#
+# mink = 1
+# for i in minks:
+#     i = int(i)
+#     mink *= i  # 这就是最小公倍数
+# minks.sort()
+# fmink = "= " + "*".join(minks)
+# print("最小公倍数为{:^8}".format(mink))
+# print(mink, fmink)
+#
+# maxk = 1
+# for i in maxks:
+#     i = int(i)
+#     maxk *= i  # 这就是最大公约数
+# maxks.sort()
+# fmaxk = "= " + "*".join(maxks)
+# print("最大公约数为{:^4}".format(maxk))
+# if len(maxks) > 1:
+#     print(maxk, fmaxk)
+#
+# print("验算如下：")
+# for fi in fd:
+#     print(mink, "= ", fi, "*", int(mink / fi))
+# for fi in fd:
+#     print(fi, "/", maxk, "= ", int(fi / maxk), )
+
+
 def Least_common_multiple(a, b):  # 求最小公倍数
     max_num = max(a, b)
     for i in range(max_num, a*b+1):
@@ -47,5 +109,11 @@ for i in range(t):
     n, *lst = map(int, input().split())
     lst2 = list(set(lst))  # 这种方式去重后顺序会变
     lst2.sort(key=lst.index)  # 这样可以保证顺序不变，对于此题顺序变不变无所谓
-    j = 0
+    while len(lst2) != 1:  # 和最小生成树原理很相似
+        a = lst2.pop()
+        b = lst2.pop()
+        c = Least_common_multiple(a, b)
+        lst2.append(c)
+
+    print(lst2[0])
 

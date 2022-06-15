@@ -15,3 +15,10 @@
 # 00001101
 # 1010101
 # # 10011111
+n = int(input())
+lst = []
+for i in range(n):
+    lst.append(input())
+lst.sort(key=lambda x: (x.count('1'), x))
+for i in lst:
+    print(i)
