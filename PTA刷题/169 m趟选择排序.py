@@ -14,3 +14,6 @@
 # 输出样例:
 # 1 2 3 5 8 6
 # # 6 7 8 9
+n, m = map(int, input().split())
+lst = list(map(int, input().split()))
+for i in range(n):
